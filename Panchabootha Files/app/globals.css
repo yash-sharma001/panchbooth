@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg: #0e0f11;
+  --panel: #16181b;
+  --panel-2: #1c1f22;
+  --line: #2a2d31;
+  --ink: #e9e7e3;
+  --ink-dim: #a7a39c;
+  --ink-faint: #6f6b64;
+  --accent: #e0a94e;
+  --accent-ink: #221a08;
+  --deva: #e0a94e;
+  --asura: #d0574f;
+  --earth: #9a7b3f;
+  --water: #3f6d8f;
+  --fire: #b04b3c;
+  --air: #3f8a72;
+  --akasha: #7c5ea6;
+  --p0: #d99b3e;
+  --p1: #3fa07a;
+  --p2: #d0574f;
+  --p3: #8a6ac0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-line bg-panel;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-panel-2
+      px-4 py-2 text-sm font-medium text-ink transition-colors
+      hover:border-ink-faint disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .btn-accent {
+    @apply border-transparent bg-accent text-accent-ink hover:brightness-105;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
